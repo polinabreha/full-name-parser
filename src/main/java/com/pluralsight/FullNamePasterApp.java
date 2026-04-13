@@ -5,13 +5,18 @@ import java.util.regex.Pattern;
 
 public class FullNamePasterApp {
     public static void main(String[] args) {
+
+        // user can write the name
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter your first last or first middle last name(exm.:Sarah Rose Smith): ");
         String fullName = scanner.nextLine();
 
+
+        // separate/split  the string with space
         String[] parsedFullName = fullName.split(Pattern.quote(" "));
 
-
+       // if it's only first and last name
+        // and also the input will convert in an appropriate look
         if (parsedFullName.length == 2) {
             String firstName = Character.toUpperCase(parsedFullName[0].charAt(0)) +
                     parsedFullName[0].substring(1).toLowerCase().trim();
@@ -19,7 +24,8 @@ public class FullNamePasterApp {
                     parsedFullName[1].substring(1).toLowerCase().trim();
             System.out.println("First name: " + firstName);
             System.out.println("Last name: " + lastName);
-
+         // for the full name with middle
+            // and also will convert in an appropriate way
         } else if (parsedFullName.length == 3) {
             String firstName = Character.toUpperCase(parsedFullName[0].charAt(0)) +
                     parsedFullName[0].substring(1).toLowerCase().trim();
